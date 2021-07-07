@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iphone</title>
+</head>
+<body>
+    <section id="iphone">
+        <span id="close-iphone"> &times; </span>
+        <img src="logo.png" alt="">
+        <span id="titels-iphone">
+            <p id="titels-iphone"> FREE APP</p>
+            <p id="subtitle-iphone">The best free app</p>
+        </span>
+        <button id="download_button_iphone" type="button"> DOWNLOAD NOW </button>
+    </section>
+    <style>
+        *{
+    margin: 0%;
+    padding: 0%;
+    outline: 0px;
+}
+#iphone {
+    width: 100%;
+    height: 80px;
+    justify-content: space-around;
+    border-bottom: grey solid 2px;
+    display: none ;
+}
+#close-iphone {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(68, 66, 66);
+    cursor: pointer;
+}
+#iphone img {
+    width: 40px;
+    height: 40px;
+    margin:10px 0px ;
+}
+#titels-iphone {
+    margin:10px 0px ;   
+}
+#title-iphone {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#subtitle-iphone {
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+button {
+    height: 50px;
+    width: 150px;
+    background-color: rgb(231, 12, 12);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    margin:10px 3px ; 
+}
+
+    </style>
+    <script>
+        let close_button = document.getElementById("close-iphone");
+        let download_button = document.getElementById("download_button_iphone");
+        let section_android = document.getElementById("iphone");
+        let user_device = navigator.userAgent.toLocaleLowerCase();
+        if(user_device.includes("iphone") || user_device.includes("ipad")){
+            setTimeout(()=>{
+                section_android.style.display = "flex"; 
+            },1*1000);
+        }else{
+            section_android.style.display = "none";
+
+        };
+        download_button.addEventListener("click", ()=> {
+            window.open("https://play.google.com/store/apps","_blank");
+        });
+        close_button.addEventListener("click",()=>{
+            iphone.style.display = "none"
+        });
+    </script>
+</body>
+</html>
